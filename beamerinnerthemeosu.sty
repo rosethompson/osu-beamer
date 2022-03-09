@@ -1,0 +1,49 @@
+\mode<presentation>
+
+\definecolor{orangeosu}{rgb}{0.9,0.3,0}
+\definecolor{orangebrown}{rgb}{0.3,0.1,0}
+\setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{author}{fg=black}
+\setbeamercolor*{date}{fg=white}
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fill[color=black] (0,0) rectangle (0.35\paperwidth,\the\paperheight);
+  \fill[color=orangeosu] (0.35\paperwidth,0) rectangle(\the\paperwidth,\the\paperheight);
+  %\fill[color=orangebrown] (0,0) rectangle(0.35\paperwidth,0.25\paperheight);
+  \fill[color=gray] (0.05\paperwidth,0.4\paperheight) rectangle(0.3\paperwidth,0.405\paperheight);  
+  \node (myfirstpic) at (0.175\paperwidth,0.5\paperheight)
+        {\includegraphics[width=.25\textwidth]{logo.png}};
+
+
+  \ifnum\thepage>1\relax%
+   \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \fi
+  \end{tikzpicture}
+}
+
+
+% Title page
+\defbeamertemplate*{title page}{osu}[1][]
+{ 
+   \vskip3cm%
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.37\paperwidth,sep=8pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.4\paperwidth,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+     \vskip0.3cm%
+     \begin{beamercolorbox}[leftskip=0.4cm,wd=0.35\paperwidth,#1]{date}
+       %\begin{center}
+         \usebeamerfont{author}\insertdate%
+       %\end{center}
+    \end{beamercolorbox}
+  \vfill
+}
+
+\mode
+<all>

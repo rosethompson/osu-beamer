@@ -1,2 +1,1 @@
-# osu-beamer
-Latex Beamer template for presentations with Oklahoma State University Theme
+# ecen5313-ldo
